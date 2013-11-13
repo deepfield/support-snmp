@@ -7,6 +7,8 @@ ROUTER_IPS=${@:3}
 
 DIR=/tmp/deepfield_walk;
 TAR=$DIR.tar.bz;
+
+rm -fr $DIR; # remove old run
 mkdir -p $DIR;
 
 function run {
