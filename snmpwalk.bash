@@ -44,7 +44,9 @@ function run {
 
   echo "router:$1" >> $DIR/dot3adAggPortAttachedAggID
   $CMD 1.2.840.10006.300.43.1.2.1.1.13 >> $DIR/dot3adAggPortAttachedAggID
-
+  
+  echo "router:$1" >> $DIR/sysDescr
+  $CMD 1.3.6.1.2.1.1.1.0 >> $DIR/sysDescr
 }
 
 run $ROUTER_IP;
