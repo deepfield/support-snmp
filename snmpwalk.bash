@@ -12,7 +12,7 @@ rm -fr $DIR; # remove old run
 mkdir -p $DIR;
 
 function run {
-  CMD="snmpbulkwalk -Cr10000 -v 2c -c $COMM_STR $1"
+  CMD="snmpwalk -v 2c -c $COMM_STR $1"
   echo $CMD
 
   echo "router:$1" >> $DIR/alias
@@ -47,6 +47,24 @@ function run {
   
   echo "router:$1" >> $DIR/sysDescr
   $CMD 1.3.6.1.2.1.1.1.0 >> $DIR/sysDescr
+
+  echo "router:$1" >> $DIR/huawei_netstream_mapping
+  $CMD 1.3.6.1.4.1.2011.5.25.110.1.2.1.2 >> $DIR/huawei_netstream_mapping
+
+  echo "router:$1" >> $DIR/alcatel_vRtrIfPortID
+  $CMD 1.3.6.1.4.1.6527.3.1.2.3.4.1.5 >> $DIR/alcatel_vRtrIfPortID
+
+  echo "router:$1" >> $DIR/alcatel_vRtrIfAlias
+  $CMD 1.3.6.1.4.1.6527.3.1.2.3.4.1.10 >> $DIR/alcatel_vRtrIfAlias
+
+  echo "router:$1" >> $DIR/alcatel_vRtrIfGlobalIndex
+  $CMD 1.3.6.1.4.1.6527.3.1.2.3.4.1.63 >> $DIR/alcatel_vRtrIfGlobalIndex
+
+  echo "router:$1" >> $DIR/alcatel_tmnxCflowdVRtrIfIndexContext
+  $CMD 1.3.6.1.4.1.6527.3.1.2.19.1.19 >> $DIR/alcatel_tmnxCflowdVRtrIfIndexContext
+
+  echo "router:$1" >> $DIR/alcatel_tmnxCflowdVRtrIfIndexContext
+  $CMD 1.3.6.1.4.1.6527.3.1.2.19.1.19 >> $DIR/alcatel_tmnxCflowdVRtrIfIndexContext
 }
 
 run $ROUTER_IP;
