@@ -58,6 +58,13 @@ function process_router {
     process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.4.1.10 alcatel_vRtrIfAlias
     process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.4.1.34 alcatel_vRtrIfDesc
     process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.4.1.3 alcatel_vRtrIfType
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.54.1.40 alcatel_vRtrIfRxPkts
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.54.1.43 alcatel_vRtrIfRxBytes
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.74.1.1 alcatel_vRtrIfTxPkts
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.74.1.4 alcatel_vRtrIfTxBytes
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.4.1.9 alcatel_vRtrIfOperState
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.4.1.62 alcatel_vRtrIfOperMtu
+    process_oid "$DIR" "$ROUTER" "$CMD" 1.3.6.1.4.1.6527.3.1.2.3.54.1.103 alcatel_vRtrIfSpeed
 }
 
 
