@@ -140,7 +140,7 @@ case $VER in
                 if [ -z "$PRIV_PASSPHRASE" ] ; then
                     usage "Privacy passphrase not specified."
                 fi
-                run "snmpbulkwalk -Cr10000 -v 3 -l authNoPriv -u $USERNAME -a $PROTOCOL -A $PASSPHRASE -x $PRIV_PROTOCOL -X $PRIV_PASSPHRASE" ${@:8}
+                run "snmpbulkwalk -Cr10000 -v 3 -l authPriv -u $USERNAME -a $PROTOCOL -A $PASSPHRASE -x $PRIV_PROTOCOL -X $PRIV_PASSPHRASE" ${@:8}
                 ;;
             "")
                 usage "Security level not specified."
